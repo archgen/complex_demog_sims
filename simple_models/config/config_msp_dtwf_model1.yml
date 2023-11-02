@@ -5,7 +5,7 @@
 ## Input Parameters
 simulation_model_name: "Model1_DTWF"
 window_length_Fstats: "5000000"
-N_replicates: "1"
+N_replicates: "1" 
 DTWF_generations: "100"
 MRCA_split_generation: "200e3"
 N_diploid_samples: "20"

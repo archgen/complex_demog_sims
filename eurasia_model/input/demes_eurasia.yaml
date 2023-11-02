@@ -11,7 +11,7 @@ description:
   Time is given in units of generations with a generation time of 29 years.'
 
 time_units: generations
-doi: ['https://docs.google.com/spreadsheets/d/1yrHse239ZCqedzFkYR_McP_Poe8WPeeKcYsq7133Dvc/edit#gid=1258851324']
+doi: ['']
 demes:
 - name: Mbuti
   epochs:
@@ -518,7 +518,7 @@ pulses:
   sources: [AegeanIsl]
   proportions: [0.06]
 
-# Demographic Model B -AegeanIsl admixture to Southern Levant Iron Age 1
+# Demographic Model-AegeanIsl admixture to Southern Levant Iron Age 1
 - dest: sLev_IA1
   time: 111.0
   sources: [AegeanIsl]
