@@ -1,0 +1,64 @@
+__default__:
+  partition: "open"
+  cpus: "{threads}"
+  time: 3:00:00
+  mem: "64G"
+  output: "logs_slurm/{rule}.{wildcards}.out"
+  email: "mkw5910@psu.edu"
+  email_type: "FAIL"
+
+
+ts_simulate:
+  mem: '6G'
+  time: 1400
+  threads: '1'
+
+ts_branch_F2:
+  mem: '6G'
+  time: 20
+  threads: '1'
+
+ts_branch_F2_matrix:
+  mem: '6G'
+  time: 20
+  threads: '1'
+
+ts_branch_FST:
+  mem: '6G'
+  time: 10
+  threads: '1'
+
+ts_branch_FST_Summary_Output:
+  mem: '6G'
+  time: 20
+  threads: '1'
+
+ts_branch_admixtureF3:
+  mem: '6G'
+  time: 20
+  threads: '1'
+
+ts_branch_admixtureF3_Summary_Output:
+  mem: '6G'
+  time: 20
+  threads: '1'
+
+ts_branch_qpAdmRotation:
+  mem: '4G'
+  time: 10
+  threads: '1'
+
+ts_branch_qpAdmRotation_Summary_Output:
+  mem: '6GB'
+  time: 10
+  threads: '1'
+
+ts_branch_qpAdmRotation_2source:
+  mem: '4G'
+  time: 10
+  threads: '1'
+
+ts_branch_qpAdmRotation_2source_Summary_Output:
+  mem: '6GB'
+  time: 10
+  threads: '1'
