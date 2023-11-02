@@ -35,5 +35,5 @@ The eurasia_model root directory contains the executable Snakemake pipeline smk 
 `snakemake -s snakemake_msp_dtwf_ts_mu_eigaDNA__eurasia_qpAdm_f3.smk --configfile config/config_msp_dtwf_eurasia.yml --use-conda 
 
 #### Empirical data misssingness 
-In order to perform the data missingness aDNA step please download the three aDNA datasets to the input directory which can be accessed at the following link: [eig_aDNA_data_dir](https://drive.google.com/drive/folders/1Uv-2NSK7e-EtO960sKGkEHB_xV5k9bOl?usp=sharing)
+In order to perform the data missingness aDNA step please download the three Eigenstrat aDNA datasets (v52.2_1240K_public_SimsSubset_SWEurasia, v52.2_1240K_public_100k500kSNPs, v52.2_1240K_public_less100kSNPs) to the input directory which can be accessed at the following link: [eig_aDNA_data_dir](https://drive.google.com/drive/folders/1Uv-2NSK7e-EtO960sKGkEHB_xV5k9bOl?usp=sharing)
 
