@@ -1,13 +1,6 @@
 #: Name: Matthew Williams
 #: Date: 03:March:2023
-# This snakemake script will run the complex Eurasian demogrphic model 
-
-
-#:: Running on roar
-#: Running in a screen session: 
-#: module load anaconda3/2021.05 source activate snakemake_base 
-#: snakemake -s Snakemake_simulation_ts_aDNA_complexDemography.smk --configfile Snakemake_configFile__msp_ts_aDNA__complexDemographicModel_A.yml --cores 4
-
+# This snakemake script will run the WGS complex Eurasian demogrphic model from Williams et al. (2023) manuscript.
 
 # Import python modules
 import pandas as pd
@@ -55,8 +48,6 @@ rule all:
         """
         echo -e "\033[48;5;45m\033[1;5;33m\033[3m\n      ☆\033[0m\033[31m\033[1mR\033[33mu\033[32mn\033[36m C\033[35mom\033[34mp\033[31ml\033[33met\033[0m\033[31m!\033[0m\033[48;5;45m\033[1;5;33m\033[3m ☆\n\033[0m"
         """
-
-
 
 
 # This rule will generate a sim aDNA FST summary results from all the replicates.

@@ -3,10 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-
-#### TESTING
-#sim_geno = "/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu_eig_aDNA/ts_mu_AncientEurasia_9K19_rep_1_ascertain_pseudohap_1240K_missing.geno"
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)
@@ -67,11 +64,6 @@ rightPops = sampleSheet %>% filter(qpAdmRotate == "right")
 out = opt$out
 eig_prefix = str_split(opt$sim_geno, ".geno")[[1]][1]
 
-#print(eig_prefix)
-#ind = fread(opt$sim_ind, header = FALSE)
-#ind_prefix = paste0(eig_prefix, ".ind")
-#ind=fread(ind_prefix, header = FALSE) 
-#print(ind)
 
 ##################################################################
 # Functions to create qpAdm Models with Max 3 source populations #

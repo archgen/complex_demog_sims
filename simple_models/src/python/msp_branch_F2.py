@@ -4,6 +4,11 @@
 Created on Mon Feb 20 16:15:10 2023
 
 @author: mkw5910
+
+This script computes pairwise F2 statistics for all unique pairs of populations in a given tree sequence.
+It takes as input a tree sequence file, window size for computing F2, and an optional output directory and file.
+The script first identifies all unique populations in the tree sequence and then calculates the F2 statistics 
+for each pair of populations over specified window sizes. The results are then written to a tab-separated text file.
 """
 
 # IMPORT PACKAGES
@@ -35,20 +40,9 @@ ap.add_argument("-o", "--out", required=False,
 
 args = vars(ap.parse_args())
 
-
 # Define variables
 out = args['out']
 window_size = int(float(args['window_size']))
-
-# # Testing variables
-#out = "TEST_F2_array.txt"
-#ts_branch = tskit.load("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/out/ROAR_Output/simple_Demography_5kSims/ts/ts_SimpleModel_DTWF_rep_1.ts")
-#window_size = 5000000
-#window_size = int(ts_branch.sequence_length / 4)
-
-
-
-
 
 
 ## **** ### ***** #### ## **** ### ***** #### ## **** ### ***** ####
@@ -110,7 +104,7 @@ for i in range(len(pop_combinations)):
 f2_table.to_csv(f"{out}", sep='\t', index=False)
 
 
-#b  = np.linspace(0, ts_branch.sequence_length, num_windows + 1)
+
     
     
     

@@ -3,15 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
-
-##### TESTING
-#inDIR = c(args[2], args[3])
-#print(inDIR)
-#qpadm_RDS <- lapply(opt$in_prefix, readRDS)
-#model = "snake_AncientEurasia_9K19"
-#inDIR = "/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/snakeTest/admixtools2/qpAdm_branch/"
-
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)

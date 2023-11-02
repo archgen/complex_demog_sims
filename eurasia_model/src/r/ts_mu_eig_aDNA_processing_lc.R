@@ -7,10 +7,8 @@
 # PACKAGES                         #
 ####################################
 # Load the dev data.table package from the specified library location
-library(data.table, lib.loc="/storage/group/cdh5313/default/mkw5910/sims/complex_Demography/dev_RLibs")
-# Load the vroom package from the specified library location
-#library(vroom, lib.loc = "/storage/home/mkw5910/.conda/envs/snakemake_base/lib/R/library/")
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library") 
+library(data.table, lib.loc="./dev_RLibs") #' Replace with the location of the dev directory
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library") 
 library(vroom)
 library(tidyverse)
 library(optparse)
@@ -73,22 +71,6 @@ if (is.null(opt$out)){
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
 
-# ### TESTING
-# sampleInfo <- fread("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/sampleSheet_HomSap__AncientEurasia_9K19.txt", fill=TRUE)
-# RscriptDIR <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/src/R/")
-# outData_pseudohap_fn <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu_eig/ts_mu_AncientEurasia_9K19_rep_1_ascertain_pseudohap_1240K_missing")
-# simData_fnprefix <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu_eig/ts_mu_AncientEurasia_9K19_rep_1")
-# realData_fnprefix <- c("1240K_public_v50.0_SimsEurasia")
-# realData_dir <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/")
-# source("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/src/R/Processing_aDNAConditions.R")
-# recom_map <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/hapmap/recom_map_HapMapII_GRCh37__Chrs21_22.txt")
-#setwd("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/")
-#sim_eigenstrat = read_eigenstrat(eig_geno="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.geno", 
-#                                 eig_snp="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.snp", 
-#                                 eig_ind="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.ind") 
-# ### TESTING
-
-
 
 ################################################
 # Eigenstrat aDNA conditions Processing        #
@@ -101,12 +83,6 @@ message("Loading simulated data")
 tic(":::: Loading simulated data Run Time = ")
 sim_eigenstrat = read_eigenstrat(eig_geno=(opt$sim_geno), eig_snp=(opt$sim_snp), eig_ind=(opt$sim_ind))  # Large file, this takes ~ 1-2min
 toc()
-
-##message("Loading hapmap data")
-##tic(":::: Loading hapmap Run Time = ")
-##recom_map <- vroom(opt$recom_map, show_col_types = FALSE)
-##toc()
-
 
 # Define ancient and modern populations
 sampleInfo <- fread(opt$sample_sheet, fill=TRUE)
@@ -183,18 +159,6 @@ message("Writing pseudohaploid eig data ...")
 tic(":::: Writing pseudoHap Data Run Time = ")
 write_eigenstrat_pshap(eigenstrat_file = sim_eigenstrat_ascertained_pseudohaploid_1240K_missing_recodeSNP, fn = opt$out)
 toc()
-
-
-##message("recode .snp file")
-##tic(":::: Recoding snp file Run Time = ")
-##sim_eigenstrat_ascertained_pseudohaploid_1240K_missing_recodeSNP = recode_snpFile(eigenstrat_file = sim_eigenstrat_ascertained_pseudohaploid_1240K_missing, hapmap_file = recom_map)
-###!! >> When you get the new code on cum_map_MSP add this to the source script
-##toc()
-
-##message("Writing pseudohaploid eig data ...")
-##tic(":::: Writing pseudoHap Data Run Time = ")
-##write_eigenstrat_pshap(eigenstrat_file = sim_eigenstrat_ascertained_pseudohaploid_1240K_missing_recodeSNP, fn = opt$out)
-##toc()
 
 
 

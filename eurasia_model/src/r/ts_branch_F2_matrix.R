@@ -3,8 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
-#.libPaths("/storage/group/cdh5313/default/mkw5910/sims/complex_Demography/.snakemake/conda/5af5b266/lib/R/library/") # conda env R lib
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(tidyverse)
 library(data.table)
 library(optparse)
@@ -34,13 +33,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out directory and filename must be supplied (output file).n", call. = FALSE)
 }
-
-#' Testing
-# f2_table = fread("./out/ROAR_Output/simple_Demography_5kSims/TEST_F2_array.txt")
-# f2_table = data.table("p1_AND_p2" = c(0.1, 0.2, 0.3), 
-#                  "p1_AND_p3" = c(0.4, 0.5, 0.6),
-#                  "p2_AND_p3" = c(0.9, 0.8, 0.7))
-
 
 
 f2_table = fread(opt$f2_table)

@@ -1,16 +1,6 @@
 #: Name: Matthew Williams
 #: Date: 20:Feb:2023
-# This snakemake script will run the Harney Simple Demography Model simulations with the following steps:
-# 1: Simulate a tree-sequence with msprime with recombination rate, genome size and popualtions following the configuration file you provide. The tree sequences will be stored.
-# 2a: Compute pairwise FST values for all the popualtions that have simualted samples (i.e. msprime tree-sequence table nodes have flag == 1). The output will be a tab separated file. 
-# 2b: Read in the pairwise FST files and generate a single summary file binding all the simulations together. 
-# 3a: Compute pairwise F2 values for all the popualtions that have simualted samples (i.e. msprime tree-sequence table nodes have flag == 1). The output will be an array with dimensions
-#    the number of popualtions * the number of popualtions * the number of windows.
-# 3b: Iteratively read in the F2 array and compute qpAdm rotation on the array. Target populations, right and source populations are defined in the configuration file you provide. 
-# 3c: Read in the qpAdm analyses and generate a summary file. 
-# 4a: Iteratively read in the F2 array and compute admixture F3 statistics whereby the target popualtion and the source populations are defined in the configuration file you provide.
-# 4b: Read in the admixture F3 analyses and generate a summary file. 
-
+# This snakemake script will run the simple demographic Models from the Williams et al. (2023) manuscript. 
 
 # Import python packages
 import pandas as pd
@@ -23,8 +13,7 @@ print("Config is: ", config)
 sim_model_name = config["simulation_model_name"]
 iterations = [i for i in range(1,int(config["N_replicates"])+1)]
 
-# Rule all - output files at the end of the pipeline dependency structure. :q
-
+# Rule all - output files at the end of the pipeline dependency structure.
 rule all:
     input:
         expand("out/{simName}/ts/ts_{simName}_rep_{iteration}.ts", simName=sim_model_name, iteration=iterations),

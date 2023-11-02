@@ -3,7 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)
@@ -59,21 +59,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
-
-
-#' >?>?>?>?>?>?> ???????? TESTING TESTING ???????? <?<?<?<?<?<?<
-#' 
-#f2_matrix = c("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/out/Model__AncientEurasia_A/admixtools2/F2_branch/ts_branch_F2__Model__AncientEurasia_A_rep_1.rds")
-#samples = c("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/input/SampleSheet_Model__AncientEurasia_A.txt")
-
-#f2_branch_matrix = readRDS(f2_matrix, refhook = NULL)
-#sampleSheet = data.table(read.csv(samples))
-
-#targetPop = "Levant__gen_74"
-#iter = 1
-#' >?>?>?>?>?>?> ^^^^^^^^^ END END ^^^^^^^^^ <?<?<?<?<?<?<
-
-
 
 # Parameters
 f2_branch_matrix = readRDS(opt$f2_matrix, refhook = NULL)

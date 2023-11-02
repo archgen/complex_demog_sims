@@ -3,7 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/m/mkw5910/.conda/envs/snakemake_base/lib/R/library")
+#.libPaths("/storage/home/m/mkw5910/.conda/envs/snakemake_base/lib/R/library")
 library(tidyverse)
 library(data.table)
 library(optparse)
@@ -33,14 +33,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out directory and filename must be supplied (output file).n", call. = FALSE)
 }
-
-#' Testing
-# f2_table = fread("./out/ROAR_Output/simple_Demography_5kSims/TEST_F2_array.txt")
-# f2_table = data.table("p1_AND_p2" = c(0.1, 0.2, 0.3), 
-#                  "p1_AND_p3" = c(0.4, 0.5, 0.6),
-#                  "p2_AND_p3" = c(0.9, 0.8, 0.7))
-
-
 
 f2_table = fread(opt$f2_table)
 names <- unique(unlist(strsplit(colnames(f2_table), "_AND_")))

@@ -3,8 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)

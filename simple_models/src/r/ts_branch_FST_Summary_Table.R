@@ -3,7 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(tidyverse)
 library(optparse)
 library(data.table)
@@ -48,10 +48,4 @@ for(i in 1:length(in_files_list)){
 
 # Save data table as RDS
 saveRDS(fst_reps_SummaryTable, file=opt$out)
-
 #' ####################################################################################################################################################################################################
-#' TESTING
-# setwd("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/")
-# in_dir = "out/ROAR_Output/simple_Demography_5kSims/branch_FST/"
-# in_files_list = list.files(in_dir)
-# fst_rep = data.table(fread(file = paste0(in_dir, in_files_list[1])))

@@ -3,17 +3,12 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(tidyverse)
 library(optparse)
 library(gtools)
 library(data.table)
 
-##### TESTING
-#setwd("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/src_PSU_simulations_Projects/complex_demographic_model/out/complexSimsModel__AncientEurasia_A_HapMapII_GRCh37__Chrs21_22_wMediSource/")
-#model = "snake_AncientEurasia_9K19"
-#inDIR = "./admixtools2/ts_branch_qpAdmReplacement_Table/"
-#results_files_list = mixedsort(sort(list.files(inDIR, full.names = TRUE)))
 
 # SYSTEM ARGUMENTS
 option_list = list(

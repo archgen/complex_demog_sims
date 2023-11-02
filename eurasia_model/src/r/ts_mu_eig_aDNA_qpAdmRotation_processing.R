@@ -3,7 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(vroom)
 library(tidyverse)
 library(optparse)
@@ -64,22 +64,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
-
-# ### TESTING
-# sampleInfo <- fread("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/sampleSheet_HomSap__AncientEurasia_9K19.txt", fill=TRUE)
-# RscriptDIR <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/src/R/")
-# outData_pseudohap_fn <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu_eig/ts_mu_AncientEurasia_9K19_rep_1_ascertain_pseudohap_1240K_missing")
-# simData_fnprefix <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu_eig/ts_mu_AncientEurasia_9K19_rep_1")
-# realData_fnprefix <- c("1240K_public_v50.0_SimsEurasia")
-# realData_dir <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/")
-# source("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/src/R/Processing_aDNAConditions.R")
-# recom_map <- c("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/input/hapmap/recom_map_HapMapII_GRCh37__Chrs21_22.txt")
-#setwd("/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/")
-#sim_eigenstrat = read_eigenstrat(eig_geno="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.geno", 
-#                                 eig_snp="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.snp", 
-#                                 eig_ind="out/HomSap__AncientEurasia_9K19/ts_mu_eig/ts_mu_HomSap__AncientEurasia_9K19_rep_5.ind") 
-# ### TESTING
-
 
 
 ################################################

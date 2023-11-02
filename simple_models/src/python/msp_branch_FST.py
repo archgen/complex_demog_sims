@@ -4,6 +4,11 @@
 Created on Mon Feb 20 16:15:10 2023
 
 @author: mkw5910
+
+This script calculates the pairwise Fst statistics for all unique pairs of populations in a given tree sequence.
+It takes as input a tree sequence file, simulation model name, simulation replicate iteration, and an optional output directory and file.
+The script first identifies all unique populations in the tree sequence and then calculates the Fst statistics for each pair of populations.
+The results, along with the simulation model name and iteration number, are then written to a tab-separated text file.
 """
 # IMPORT PACKAGES
 import msprime
@@ -37,19 +42,10 @@ ap.add_argument("-o", "--out", required=False,
 
 args = vars(ap.parse_args())
 
-
 # Define variables
 iteration = args['iteration']
 out = args['out']
 sim_model = args['simName']
-
-
-# # Testing variables
-# iteration = 1
-# sim_model = "TEST"
-# out = "TEST_FST_BRANCH.txt"
-# ts_branch = tskit.load("ts_SimpleModel_DTWF_rep_10.ts")
-
 
 
 ## **** ### ***** #### ## **** ### ***** #### ## **** ### ***** ####
@@ -77,9 +73,6 @@ for i in range(len(unique_populations)):
         idx = unique_populations[i]
         pop_inds = ts_branch.samples(population=idx)
         pop_node_Dict[idx].append(pop_inds)
-
-# Test FST
-#ts_branch.Fst(sample_sets= [pop_node_Dict[5][1].tolist(), pop_node_Dict[6][1].tolist()], mode='branch', span_normalise=True)
 
 # Generate all unique 2-way combinations of populations 
 pop_combinations = list(itertools.combinations(unique_populations, 2))
@@ -109,8 +102,6 @@ df = pd.DataFrame(data)
 
 # write dataframe to file as tab-separated txt file
 df.to_csv(f"{out}", sep='\t', index=False)
-
-
 ## **** ### ***** #### ## **** ### ***** #### ## **** ### ***** ####
 ## **** ### ***** #### ## **** ### ***** #### ## **** ### ***** ####
 

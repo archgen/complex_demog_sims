@@ -3,8 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
-#.libPaths("/storage/group/cdh5313/default/mkw5910/sims/complex_Demography/.snakemake/conda/5af5b266/lib/R/library/")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(tidyverse)
 library(optparse)
 library(data.table)
@@ -66,8 +65,3 @@ write.table(fst_reps_SummaryTable, file = opt$out, sep = "\t", row.names = FALSE
 
 
 #' ####################################################################################################################################################################################################
-#' TESTING
-# setwd("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/")
-# in_dir = "out/ROAR_Output/simple_Demography_5kSims/branch_FST/"
-# in_files_list = list.files(in_dir)
-# fst_rep = data.table(fread(file = paste0(in_dir, in_files_list[1])))

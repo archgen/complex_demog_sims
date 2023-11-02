@@ -134,16 +134,6 @@ v50_0_1240Kdownsamp_add_missing = function(eigenstrat_file, reference_file, who_
   return(list(geno = geno, snp = snp, ind = ind))
 }
 
-#recode_snpFile = function(eigenstrat_file, hapmap_file) {
-#  geno = eigenstrat_file[["geno"]]
-#  snp = eigenstrat_file[["snp"]]
-#  ind = eigenstrat_file[["ind"]]
-#  hapmap = hapmap_file
-#  hapDF = data.frame(x=hapmap$`Position(bp)`, y=hapmap$`Map(cM)`) #cum_map_MSP
-#  interGenPos = data.frame(approx(hapDF$x, hapDF$y, xout=snp$pos))
-#  snp$gen_pos = interGenPos$y
-#  return(list(geno = geno, snp = snp, ind = ind))
-#}
 
 recode_snpFile = function(eigenstrat_file) {
   geno = eigenstrat_file[["geno"]]

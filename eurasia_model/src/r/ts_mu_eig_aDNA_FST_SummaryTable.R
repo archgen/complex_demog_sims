@@ -3,9 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-#library(admixtools)
-
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(tidyverse)
 library(optparse)
 library(data.table)
@@ -38,17 +36,6 @@ if (is.null(opt$out)){
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
 
-
-# message(" ****** DEBUGGING INPUT PARAMS ****** ")
-# # opt_parser = OptionParser(option_list = option_list);
-# # opt = parse_args(opt_parser);
-# message("{params.workDIR} = ", opt$in_dir)
-# message("{params.datatype} = ", opt$data_type)
-# message("{params.sim_model} = ", opt$model_name)
-# message("{params.qpAdmTable} = ", opt$out)
-# message(" ****** END  ****** ")
-
-
 #' Creating a list of the rds files for all the replicates for each target
 fst_reps_SummaryTable = data.table()
 in_rds_list = list.files(opt$in_dir)
@@ -64,15 +51,6 @@ for(i in 1:length(in_rds_list)){
 # Save data table as RDS
 #saveRDS(fst_reps_SummaryTable, file=opt$out)
 write.table(fst_reps_SummaryTable, file = opt$out, sep = "\t", row.names = FALSE)
-
-
-
 #' ####################################################################################################################################################################################################
-#' TESTING
-# setwd("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/")
-# inDIR = "out/complexSimsModel__AncientEurasia_A_HapMapII_GRCh37__Chrs21_22_wMediSource/admixtools2/FST_sim_aDNA/"
-# in_rds_list = list.files(inDIR)
-# fst_rep = data.table(readRDS(file = paste0(inDIR, in_rds_list[1])))
-
 
 

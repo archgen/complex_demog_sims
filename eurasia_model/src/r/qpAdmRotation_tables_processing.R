@@ -1,13 +1,9 @@
 #' Admixtools2 processing qpAdm results & Generating Figures
 #' 
 #' Matthew Williams
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(data.table);library(dplyr)
 
-## Testing
-#path = "/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/"
-#data = "out/Simple_Tree_Chr22_rotation/admixtools2/qpAdm_branch/qpAdm_rotation_ts_branch_F2__Simple_Tree_Chr22_rotation_rep_1.rds"
-#fileNames = paste0(path, data)
 
 qpAdm_rotate_processing = function(DIR, sim_model, dataType) {
   weightsTable = data.table()

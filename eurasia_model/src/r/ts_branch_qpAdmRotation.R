@@ -4,7 +4,7 @@
 #'  
 #' Load in libraries
 #' Set path to R library dir
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)
@@ -46,9 +46,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
-
-# TESTING
-#sampleSheet = data.table(read.csv("../Complex_Admixture_Histories/snakemake/src_PSU_simulations_Projects/complex_demographic_model/input/Snakemake_sampleSheet_ts_aDNA_complexDemography.txt"))
 
 # Parameters
 f2_branch_matrix = readRDS(opt$f2_matrix, refhook = NULL)
@@ -100,15 +97,3 @@ if (nrow(left_sets) != nrow(right_sets)) {
 # Save output
 saveRDS(qpadm_rotate_run, file=out)
 
-
-## qpAdm Analysis
-#message("")
-#message("Beginning qpAdm analysis on target population ", targetPop)
-## Define qpAdm rotation models
-#qpAdm_Rotate_Models <- rotateMax3Left(leftright=c(unique(sourcePops$Pop)), target=targetPop, rightfix = NULL)
-#qpAdm_Rotate_Models <- rotate_models(leftright=c(unique(sourcePops$Pop)), target=targetPop, rightfix = c(unique(rightPops$Pop)))
-#qpAdm_Rotate_Models_filt <- qpAdm_Rotate_Models %>% filter(lengths(left) <= 2)
-## Run qpAdm rotation
-#qpadm_multi_run=qpadm_multi(f2_branch_matrix, qpAdm_Rotate_Models_filt, full_results=TRUE, fudge_twice = TRUE)
-## Save output
-#saveRDS(qpadm_multi_run, file=out)

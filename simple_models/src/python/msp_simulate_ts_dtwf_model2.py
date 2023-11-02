@@ -6,6 +6,12 @@ Created on Fri Nov 11 13:09:27 2022
 @author: mkw5910
 
 Simple Demography 2 :: admixture from R3 to S1
+
+This script simulates a simple seven population demography using msprime. It takes as input various parameters such as the simulation model name, 
+simulation replicate iteration, generations to simulate under the DTWF model, generation time for the deepest population split (T0), simulation 
+generation time, simulation diploid effective population size, number of diploid samples to simulate, and an output directory and file. The script 
+first randomly samples simulation parameters until certain conditions are met. Then it sets up a demography with seven populations and simulates 
+their evolution according to the specified parameters. The results are then written to a file.
 """
 
 # IMPORT PACKAGES
@@ -19,8 +25,6 @@ import math
 print('msprime', msprime.__version__)
 print('argparse', argparse.__version__)
 print('np', np.__version__)
-
-
 
 # SYSTEM ARGUMENTS
 #######################
@@ -85,11 +89,6 @@ while True:
     if T_1 > T_2 > T_3 > T_admix_2 > T_admix and T_1 > T_2 > T_4 > T_admix:
         break
 
-# 
-# Demography Parameters
-#S1_sample_time = ((int(np.random.uniform(0, T_3, 1))) / generation_time)
-#S2_sample_time = ((int(np.random.uniform(0, T_4, 1))) / generation_time)
-
 # Demography Parameters
 # Output simulation paramters table
 sim_params_table = [["T_0_gen", "T_1_gen", "T_2_gen", "T_3_gen", "T_4_gen", "T_admix_gen", "alpha_S1", "T_admix2_gen", "alpha_2", "DTWFgens", "generation_time", "rep", "seed"],
@@ -139,7 +138,6 @@ demography.add_population_split(time=T_0 / generation_time, derived=["R4", "iANC
 demography.sort_events()
 
 # Tree-sequence Simulation for single genome/chromosome 
-#print(args['recom'])
 
 if args['recom'] and args['length'] != "None":
         seq_L = int(float(args['length']))

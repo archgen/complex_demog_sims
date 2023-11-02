@@ -3,8 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)
@@ -59,17 +58,6 @@ if (is.null(opt$out)){
   print_help(opt_parser)
   stop("Out FILENAME & PATH must be supplied (output file).n", call. = FALSE)
 }
-
-
-#' >?>?>?>?>?>?> ???????? TESTING TESTING ???????? <?<?<?<?<?<?<
-#' 
-# sim_geno = c("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/out/Model__AncientEurasia_A/ts_mu_eig_aDNA/ts_mu_Model__AncientEurasia_A_rep_1_ascertain_pseudohap_1240K_missing.geno")
-# samples = c("/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/project__complex_msp_simulation/input/SampleSheet_Model__AncientEurasia_A.txt")
-# sampleSheet = data.table(read.csv(samples))
-# targetPop = "Levant__gen_74"
-# eig_prefix = str_split(sim_geno, ".geno")[[1]][1]
-# iter = 1
-#' >?>?>?>?>?>?> ^^^^^^^^^ END END ^^^^^^^^^ <?<?<?<?<?<?<
 
 
 # Parameters

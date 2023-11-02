@@ -3,15 +3,7 @@
 #' Matthew Williams: 
 #'  
 #' Load in libraries
-
-
-##### TESTING
-#inDIR = c(args[2], args[3])
-#print(inDIR)
-#qpadm_RDS <- lapply(opt$in_prefix, readRDS)
-#model = "snake_AncientEurasia_9K19"
-#inDIR = "/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/snakeTest/admixtools2/qpAdm_branch/"
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
+#.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(admixtools)
 library(tidyverse)
 library(optparse)
@@ -70,7 +62,6 @@ DIR_Path = opt$in_dir # input data DIR
 target = opt$target_pop
 
 #' Generate list of sim qpAdm RDS files (keeping alpha numeric order)
-#file_list <- list.files(path = DIR_Path, pattern = "\\.rds$", full.names = TRUE)
 file_list <- list.files(path = DIR_Path, pattern = paste0(target, "\\.rds$"), full.names = TRUE)
 
 sorted_index <- order(as.numeric(gsub("[^0-9]", "", file_list)))
