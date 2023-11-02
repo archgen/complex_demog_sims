@@ -1,0 +1,526 @@
+description:
+  'This model aims to be somewhat reflective of the complexity underlying the demographic history of 
+  the Ancient Near East and Western Mediterranean human populations. Whilst the complexity of this model
+  undoubetedly falls short of the true complexity of the human past, it is intended to challenge the performance
+  of commonly used statistical tools in reconstructing the genetic history of human populations.
+  Whilst the majority of simulation parameters are guided by a synthesis of the archaeogenetic literature a number
+  of simplifications had to be taken to keep the number of popualtions and admixture events modest. 
+
+
+  Population sizes are given in diploid ploidy as msprime simulations are in DTWF model format.
+  Time is given in units of generations with a generation time of 29 years.'
+
+time_units: generations
+doi: ['https://docs.google.com/spreadsheets/d/1yrHse239ZCqedzFkYR_McP_Poe8WPeeKcYsq7133Dvc/edit#gid=1258851324']
+demes:
+- name: Mbuti
+  epochs:
+  - {end_time: 3447.0, start_size: 29100.0}
+  - {end_time: 3446.0, start_size: 50.0}
+  - {end_time: 0, start_size: 17300.0}
+- name: eAfrica
+  start_time: 5172.0
+  ancestors: [Mbuti]
+  epochs:
+  - {end_time: 3302, start_size: 10000.0}
+- name: OOA
+  start_time: 3303.0
+  ancestors: [eAfrica]
+  epochs:
+  - {end_time: 2217, start_size: 40827.0}
+  - {end_time: 2216, start_size: 2.0}
+  - {end_time: 882, start_size: 40827.0}
+- name: BasalEurasian
+  start_time: 2752.0
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 879, start_size: 1920.0}
+- name: UstIshim
+  start_time: 1776.0
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 1549, start_size: 1920.0}
+- name: eEurasia
+  start_time: 1738
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 1550, start_size: 6300.0}
+- name: nEurasia
+  start_time: 1548.0
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 882, start_size: 1920.0}
+  - {end_time: 881, start_size: 100.0}
+  - {end_time: 827, start_size: 1920.0}
+- name: Han
+  start_time: 1553.0
+  ancestors: [eEurasia]
+  epochs:
+  - {end_time: 882, start_size: 6300.0}
+  - {end_time: 881, start_size: 100.0}
+  - {end_time: 0, start_size: 6300.0}
+- name: sAsia
+  start_time: 1553.0
+  ancestors: [eEurasia]
+  epochs:
+  - {end_time: 882, start_size: 6300.0}
+  - {end_time: 881, start_size: 100.0}
+  - {end_time: 0, start_size: 6300.0}
+- name: WHG
+  start_time: 883.0
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 882, start_size: 2.8}
+  - {end_time: 748, start_size: 41784.0}
+  - {end_time: 250, start_size: 165.0}
+- name: NearEast
+  start_time: 883.0
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 882, start_size: 25.0}
+  - {end_time: 516, start_size: 40827.0}
+# Sample Population
+- name: nEur_HG
+  start_time: 831.0
+  ancestors: [nEurasia]
+  epochs:
+  - {end_time: 829, start_size: 1920.0}
+- name: EHG
+  start_time: 828
+  ancestors: [WHG, nEurasia]
+  proportions: [0.91, 0.09]
+  epochs:
+  - {end_time: 467, start_size: 14300.0}
+  - {end_time: 200, start_size: 11768.0}
+- name: IHG
+  start_time: 790
+  ancestors: [WHG]
+  epochs:
+  - {end_time: 200, start_size: 1725.0}
+- name: eNearEast
+  start_time: 545.0
+  ancestors: [NearEast]
+  epochs:
+  - {end_time: 150, start_size: 40827.0}
+- name: wNearEast
+  start_time: 545.0
+  ancestors: [NearEast]
+  epochs:
+  - {end_time: 544, start_size: 26.0}
+  - {end_time: 289, start_size: 35367.0}
+- name: nAfr
+  start_time: 517.0
+  ancestors: [NearEast, Mbuti]
+  proportions: [0.7, 0.3]
+  epochs:
+  - {end_time: 100, start_size: 10000.0}
+- name: cAsia
+  start_time: 517.0
+  ancestors: [EHG]
+  epochs:
+  - {end_time: 0, start_size: 6300.0}
+- name: BHG
+  start_time: 507
+  ancestors: [WHG]
+  epochs:
+  - {end_time: 200, start_size: 1768.0}
+# Sample Population
+- name: nAfr_EpiP
+  start_time: 491.0
+  ancestors: [nAfr]
+  epochs:
+  - {end_time: 489, start_size: 10000.0}
+- name: Caucasus
+  start_time: 488.0
+  ancestors: [wNearEast]
+  epochs:
+  - {end_time: 100, start_size: 1473.0}
+- name: Levant
+  start_time: 483.0
+  ancestors: [wNearEast]
+  epochs:
+  - {end_time: 100, start_size: 1550.0}
+- name: Zagros
+  start_time: 468.0
+  ancestors: [eNearEast]
+  epochs:
+  - {end_time: 100, start_size: 1626.0}
+- name: EHGsteppe
+  start_time: 467.0
+  ancestors: [EHG]
+  epochs:
+  - {end_time: 100, start_size: 6258.0}
+- name: nwNearEast
+  start_time: 446.0
+  ancestors: [wNearEast, WHG]
+  proportions: [0.86, 0.14]
+  epochs:
+  - {end_time: 445, start_size: 137.0}
+  - {end_time: 258, start_size: 620.0}
+# Sample Population
+- name: Anatolia_EpiP
+  start_time: 441.0
+  ancestors: [nwNearEast]
+  epochs:
+  - {end_time: 439, start_size: 620.0}
+# Sample Population
+- name: sLev_EpiP
+  start_time: 431.0
+  ancestors: [Levant]
+  epochs:
+  - {end_time: 429, start_size: 1550.0}
+- name: Aegean
+  start_time: 413.0
+  ancestors: [nwNearEast]
+  epochs:
+  - {end_time: 100, start_size: 13213.0}
+# Sample Population
+- name: Caucasus_HG
+  start_time: 396.0
+  ancestors: [Caucasus]
+  epochs:
+  - {end_time: 394, start_size: 1473.0}
+- name: Anatolia
+  start_time: 362.0
+  ancestors: [nwNearEast]
+  epochs:
+  - {end_time: 111, start_size: 1679.0}
+# Sample Population
+- name: Zagros_Neo
+  start_time: 361.0
+  ancestors: [Zagros]
+  epochs:
+  - {end_time: 359, start_size: 1626.0}
+# Sample Population
+- name: sLevant_Neo
+  start_time: 361.0
+  ancestors: [Levant]
+  epochs:
+  - {end_time: 359, start_size: 1550.0}
+# Sample Population
+- name: Balkan_HG
+  start_time: 341.0
+  ancestors: [BHG]
+  epochs:
+  - {end_time: 339, start_size: 1768.0}
+- name: Steppe
+  start_time: 297.0
+  ancestors: [Caucasus]
+  epochs:
+  - {end_time: 145, start_size: 15229.0}
+# Sample Population
+- name: EEHG
+  start_time: 296.0
+  ancestors: [EHG]
+  epochs:
+  - {end_time: 294, start_size: 11768.0}
+- name: nLevant
+  start_time: 290.0
+  ancestors: [Anatolia, Levant]
+  proportions: [0.64, 0.36]
+  epochs:
+  - {end_time: 100, start_size: 1679.0}
+- name: wMediterranean
+  start_time: 276.0
+  ancestors: [nwNearEast, IHG]
+  proportions: [0.95, 0.05]
+  epochs:
+  - {end_time: 100, start_size: 1709.0}
+# Sample Population
+- name: WEHG
+  start_time: 266.0
+  ancestors: [WHG]
+  epochs:
+  - {end_time: 264, start_size: 165.0}
+- name: EEF
+  start_time: 258.0
+  ancestors: [nwNearEast, WHG]
+  proportions: [0.967, 0.033]
+  epochs:
+  - {end_time: 0, start_size: 1709.0}
+- name: AegeanIsl
+  start_time: 202.0
+  ancestors: [Aegean]
+  epochs:
+  - {end_time: 100, start_size: 5822.0}
+# Sample Population
+- name: cAsia_ChL
+  start_time: 176.0
+  ancestors: [cAsia]
+  epochs:
+  - {end_time: 174, start_size: 6300.0}
+# Sample Population
+- name: Zagros_BA
+  start_time: 171.0
+  ancestors: [Zagros]
+  epochs:
+  - {end_time: 169, start_size: 1626.0}
+# Sample Population
+- name: Anatolia_BA
+  start_time: 166.0
+  ancestors: [Anatolia]
+  epochs:
+  - {end_time: 164, start_size: 1679.0}
+# Sample Population 
+- name: Steppe_BA
+  start_time: 161.0
+  ancestors: [Steppe]
+  epochs:
+  - {end_time: 159, start_size: 15229.0}
+# Sample Population
+- name: Caucasus_BA
+  start_time: 156.0
+  ancestors: [Caucasus]
+  epochs:
+  - {end_time: 154, start_size: 1473.0}
+# Sample Population 
+- name: sLev_BA
+  start_time: 151.0
+  ancestors: [Levant]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: Aegean_BA
+  start_time: 146.0
+  ancestors: [Aegean]
+  epochs:
+  - {end_time: 144, start_size: 13213.0}
+# Sample Population 
+- name: AegeanIsl_BA
+  start_time: 133.0
+  ancestors: [AegeanIsl]
+  epochs:
+  - {end_time: 131, start_size: 5822.0}
+# Sample Population
+- name: wMedi_BA
+  start_time: 121.0
+  ancestors: [wMediterranean]
+  epochs:
+  - {end_time: 119, start_size: 1709.0}
+# Sample Population 
+- name: sLev_IA1
+  start_time: 112.0
+  ancestors: [Levant]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: sLev_IA2
+  start_time: 102.0
+  ancestors: [sLev_IA1]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: sLev_IA3
+  start_time: 87.0
+  ancestors: [sLev_IA2]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: sLev_Hist1
+  start_time: 62.0
+  ancestors: [sLev_IA3]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: sLev_Hist2
+  start_time: 32.0
+  ancestors: [sLev_Hist1]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Sample Population 
+- name: sLev_Hist3
+  start_time: 12.0
+  ancestors: [sLev_Hist2]
+  epochs:
+  - {end_time: 0, start_size: 1550.0}
+# Ascertain Populations
+- name: ascertain_CEU
+  start_time: 34.0
+  ancestors: [EEF]
+  epochs:
+  - {end_time: 0, start_size: 1000.0}
+- name: ascertain_CHB
+  start_time: 34.0
+  ancestors: [cAsia]
+  epochs:
+  - {end_time: 0, start_size: 510.0}
+- name: ascertain_AFR
+  start_time: 34.0
+  ancestors: [Mbuti]
+  epochs:
+  - {end_time: 0, start_size: 10000.0}
+- name: ascertain_sAs
+  start_time: 34.0
+  ancestors: [sAsia]
+  epochs:
+  - {end_time: 0, start_size: 510.0}
+
+# Admixture pulse
+pulses:
+- dest: NearEast
+  time: 880.0
+  sources: [BasalEurasian]
+  proportions: [0.0936]
+- dest: wNearEast
+  time: 489.0
+  sources: [WHG]
+  proportions: [0.21]
+- dest: WHG
+  time: 482.0
+  sources: [wNearEast]
+  proportions: [0.078]
+- dest: IHG
+  time: 476.0
+  sources: [WHG]
+  proportions: [0.04]
+- dest: WHG
+  time: 475.0
+  sources: [IHG]
+  proportions: [0.04]
+- dest: Levant
+  time: 380.0
+  sources: [nwNearEast]
+  proportions: [0.33]
+- dest: Levant
+  time: 370.0
+  sources: [Aegean]
+  proportions: [0.02]
+- dest: Aegean
+  time: 363.0
+  sources: [Levant]
+  proportions: [0.04]
+- dest: Anatolia
+  time: 357.0
+  sources: [wNearEast]
+  proportions: [0.02]
+- dest: Caucasus
+  time: 345.0
+  sources: [wNearEast]
+  proportions: [0.11]
+- dest: Zagros
+  time: 327.0
+  sources: [eNearEast]
+  proportions: [0.068]
+- dest: BHG
+  time: 320.0
+  sources: [wNearEast]
+  proportions: [0.066]
+- dest: Anatolia
+  time: 310.0
+  sources: [WHG]
+  proportions: [0.12]
+- dest: Aegean
+  time: 310.0
+  sources: [WHG]
+  proportions: [0.033]
+- dest: Anatolia
+  time: 305.0
+  sources: [Levant]
+  proportions: [0.3]
+- dest: Caucasus
+  time: 296.0
+  sources: [Zagros]
+  proportions: [0.15]
+- dest: Anatolia
+  time: 295.0
+  sources: [Zagros]
+  proportions: [0.1]
+- dest: Caucasus
+  time: 294.0
+  sources: [Anatolia]
+  proportions: [0.2]
+- dest: Zagros
+  time: 293.0
+  sources: [Anatolia]
+  proportions: [0.1]
+- dest: Anatolia
+  time: 292.0
+  sources: [Caucasus]
+  proportions: [0.15]
+- dest: Zagros
+  time: 291.0
+  sources: [Caucasus]
+  proportions: [0.6]
+- dest: Aegean
+  time: 290.0
+  sources: [wNearEast]
+  proportions: [0.12]
+- dest: nLevant
+  time: 283.0
+  sources: [Zagros]
+  proportions: [0.15]
+- dest: Caucasus
+  time: 276.0
+  sources: [Anatolia]
+  proportions: [0.2]
+- dest: Steppe
+  time: 271.0
+  sources: [EHGsteppe]
+  proportions: [0.34]
+- dest: Aegean
+  time: 268.0
+  sources: [Caucasus]
+  proportions: [0.16]
+- dest: wMediterranean
+  time: 250.0
+  sources: [IHG]
+  proportions: [0.06]
+- dest: Zagros
+  time: 241.0
+  sources: [Levant]
+  proportions: [0.2]
+- dest: Levant
+  time: 235.0
+  sources: [Caucasus]
+  proportions: [0.4]
+- dest: Caucasus
+  time: 225.0
+  sources: [EHGsteppe]
+  proportions: [0.075]
+- dest: Levant
+  time: 225.0
+  sources: [Anatolia]
+  proportions: [0.4]
+- dest: cAsia
+  time: 224.0
+  sources: [Han]
+  proportions: [0.45]
+- dest: nLevant
+  time: 197.0
+  sources: [Levant]
+  proportions: [0.25]
+- dest: cAsia
+  time: 190.0
+  sources: [EHGsteppe]
+  proportions: [0.16]
+- dest: Caucasus
+  time: 188.0
+  sources: [Zagros]
+  proportions: [0.15]
+- dest: Zagros
+  time: 176.0
+  sources: [EHGsteppe]
+  proportions: [0.02]
+- dest: Levant
+  time: 155.0
+  sources: [Caucasus]
+  proportions: [0.12]
+- dest: Aegean
+  time: 149.0
+  sources: [Steppe]
+  proportions: [0.28]
+- dest: wMediterranean
+  time: 146.0
+  sources: [Steppe]
+  proportions: [0.15]
+- dest: wMediterranean
+  time: 140.0
+  sources: [AegeanIsl]
+  proportions: [0.06]
+
+# Demographic Model B -AegeanIsl admixture to Southern Levant Iron Age 1
+- dest: sLev_IA1
+  time: 111.0
+  sources: [AegeanIsl]
+  proportions: [0.2]
+

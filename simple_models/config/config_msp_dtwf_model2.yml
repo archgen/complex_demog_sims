@@ -1,0 +1,54 @@
+#: Name: Matthew Williams
+#: Date: 20:Feb:2023
+#: Config file for the Simple Demography simulation
+
+## Input Parameters
+simulation_model_name: "Model2_DTWF"
+window_length_Fstats: "5000000"
+N_replicates: "1"
+DTWF_generations: "100"
+MRCA_split_generation: "200e3"
+N_diploid_samples: "20"
+diploid_Ne: "10e3"
+generation_time: "29"
+
+#: Chromosomes Configuration
+#: Source https://popsim-consortium.github.io/stdpopsim-docs/latest/catalog.html#sec_catalog_HomSap 
+recombination_rate: None
+chromosome_length: None
+
+
+## Scripts
+# R
+R_script_DIR: "src/r/"
+ts_branch_FST_Summary_Output: "src/r/ts_branch_FST_Summary_Table.R"
+ts_branch_F2_matrix: "src/r/ts_branch_F2_matrix.R"
+ts_branch_qpAdmRotation: "src/r/ts_branch_qpAdmRotation_Model_Violation.R"
+ts_branch_qpAdmRotation_SummaryTable: "src/r/ts_branch_qpAdmRotation_Model_Violation_SummaryTable.R"
+ts_branch_admixF3: "src/r/ts_branch_admixF3.R"
+ts_branch_admixF3_SummaryTable: "src/r/ts_branch_admixF3_SummaryTable.R"
+ts_branch_qpAdmRotation_SummaryTable_2source: "src/r/ts_branch_qpAdmRotation_2sources_SummaryTable.R"
+ts_branch_qpAdmRotation_2source: "src/r/ts_branch_qpAdmRotation_2sources.R"
+
+# python
+msp_ts_simulate: "src/python/msp_simulate_ts_dtwf_model2.py"
+ts_branch_FST: "src/python/msp_branch_FST.py"
+ts_branch_F2: "src/python/msp_branch_F2.py"
+
+###################
+## ******* 
+# SOFTWARE PACKAGES
+## * R packages required
+# tidyverse
+# optparse
+# data.table
+# admixtools
+## * Python packages required
+# msprime 1.2.0
+# pandas 1.3.5
+# tabulate
+# argparse  1.1
+# random
+# numpy 1.23.1
+# tskit 0.5.3
+# math

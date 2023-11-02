@@ -1,0 +1,2 @@
+CC=x86_64-conda-linux-gnu-cc
+CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /storage/group/cdh5313/default/mkw5910/sims/simple_demography_var_recom_DTWF/.snakemake/conda/451feefd/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1667634548211/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/storage/group/cdh5313/default/mkw5910/sims/simple_demography_var_recom_DTWF/.snakemake/conda/451feefd=/usr/local/src/conda-prefix

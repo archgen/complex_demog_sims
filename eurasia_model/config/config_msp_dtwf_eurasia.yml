@@ -1,0 +1,56 @@
+#: Name: Matthew Williams
+#: Date: 03:March:2023
+#: This is the configuration file for Snakemake submission file: Snakemake_simulation_ts_aDNA_complexDemography__qpAdmRotation_admixF3.smk
+#: Demographic History sub-model [A]
+#: To run this file the below parameters and files are required. 
+
+
+## Input files
+demes_yaml: "input/demes_eurasia.yaml"
+sample_sheet: "input/sampleSheet_eurasia.txt"
+empir_aDNA_dir: "input/"
+empir_aDNA_prefix: ["v52.2_1240K_public_SimsSubset_SWEurasia", "v52.2_1240K_public_100k500kSNPs", "v52.2_1240K_public_less100kSNPs"]
+
+## Input Parameters
+simulation_model_name: "eurasia_model__stdPopSim_WGS_aDNA"
+DTWF_generations: "25"
+window_length_Fstats: "5000000"
+mutation_rate: "1.29e-08"
+N_replicates: "50"
+## Scripts
+# R
+ts_branch_FST_Summary_Output: "src/r/ts_branch_FST_SummaryTable.R"
+ts_branch_F2_matrix: "src/r/ts_branch_F2_matrix.R"
+ts_branch_qpAdmRotation: "src/r/ts_branch_qpAdmRotation.R"
+qpAdmRotation_tables_processing: "src/r/qpAdmRotation_tables_processing.R"
+ts_branch_qpAdmRotation_SummaryTable: "src/r/ts_branch_qpAdmRotation_SummaryTable.R"
+ts_branch_qpAdmReplacement: "src/r/ts_branch_qpAdmReplacement.R"
+ts_branch_qpAdmReplacement_SummaryTable: "src/r/ts_branch_qpAdmReplacement_SummaryTable.R"
+ts_branch_admixtureF3: "src/r/ts_branch_admixtureF3.R"
+ts_branch_admixtureF3_SummaryTable: "src/r/ts_branch_admixtureF3_SummaryTable.R"
+ts_mu_eig_aDNA_processing: "src/r/ts_mu_eig_aDNA_processing.R"
+aDNA_conditions_functions: "src/r/aDNA_conditions_functions.R"
+ts_mu_eig_aDNA_qpAdmRotation: "src/r/ts_mu_eig_aDNA_qpAdmRotation.R"
+ts_mu_eig_aDNA_qpAdmRotation_SummaryTable: "src/r/ts_mu_eig_aDNA_qpAdmRotation_SummaryTable.R"
+ts_mu_eig_aDNA_qpAdmRotation_processing: "src/r/ts_mu_eig_aDNA_qpAdmRotation_processing.R"
+ts_mu_eig_aDNA_qpAdmReplacement: "src/r/ts_mu_eig_aDNA_qpAdmReplacement.R"
+ts_mu_eig_aDNA_qpAdmReplacement_SummaryTable: "src/r/ts_mu_eig_aDNA_qpAdmReplacement_SummaryTable.R"
+ts_mu_eig_aDNA_admixtureF3: "src/r/ts_mu_eig_aDNA_admixtureF3.R"
+ts_mu_eig_aDNA_admixtureF3_SummaryTable: "src/r/ts_mu_eig_aDNA_admixtureF3_SummaryTable.R"
+ts_mu_eig_aDNA_FST: "src/r/ts_mu_eig_aDNA_FST.R"
+ts_mu_eig_aDNA_FST_Summary_Output: "src/r/ts_mu_eig_aDNA_FST_SummaryTable.R"
+ts_mu_eig_aDNA_qpAdmRotate_loop: "src/r/ts_mu_eig_aDNA_qpAdmRotate_loop.R"
+
+aDNA_conditions_functions_lc: "src/r/aDNA_conditions_functions_chrs21_22.R"
+ts_mu_eig_aDNA_processing_lc: "src/r/ts_mu_eig_aDNA_processing_lc.R"
+
+# - Dubug code
+recode_chrs_ts_mu_eig: "recode_chrs_ts_mu_eig.R"
+
+# python
+msp_ts_simulate: "src/python/msp_simulate_dtwf_ts.py"
+ts_branch_FST_DT: "src/python/ts_branch_FST_DT.py"
+ts_branch_F2_DT: "src/python/ts_branch_F2_DT.py"
+msp_ts_mutate: "src/python/msp_simulate_ts_mu.py"
+msp_ts_mu_eig_output: "src/python/msp_ts_mu_eig_out.py"
+
