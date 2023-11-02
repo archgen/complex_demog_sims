@@ -1,7 +1,6 @@
 #: Name: Matthew Williams
 #: Date: 03:March:2023
-#: This is the configuration file for Snakemake submission file: Snakemake_simulation_ts_aDNA_complexDemography__qpAdmRotation_admixF3.smk
-#: Demographic History sub-model [A]
+#: This is the configuration file for Snakemake submission file: snakemake_msp_dtwf_ts_mu_eigaDNA__eurasia_qpAdm_f3.smk
 #: To run this file the below parameters and files are required. 
 
 
