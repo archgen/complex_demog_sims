@@ -6,10 +6,10 @@ This repository contains the code for reproducing simulations from Williams et a
 ## Overview
 Below are the two simulation project sub-directories (simple_models, and eurasia_model) that each contain Snakemake pipelines to execute them.
 
-- simple_models: contains the Snakemake pipeline to simulate the simple demographic model simulations (Model 1-4) that explore the specified topological and admixture parameter space.
+- simple_models: contains the Snakemake pipeline to simulate the simple demographic model simulations (Models 1-4) that explore the specified topological and admixture parameter space.
 - eurasian_model: contains the Snakemake pipeline to simulate from the Eurasian complex demographic model.  
 
-The Snakemake pipelines were executed from a (snake_base) conda environment using anaconda Command line client (version 1.7.2), Snakemake v.3.13.3, and Python 3.6.13 :: Anaconda, Inc. When running the pipeline for the first time, the Snakemake software will initialize a conda environment for the simulation pipeline. The file, *msprime-env.yaml*, located in each sub-directory, contains all the software necessary to execute the simulations and Snakemake will read from this file to set-up the conda env (note conda can be finicky when transferring across operating systems, the pipeline was setup on a Red Hat Enterprise Linux 7 env.). The only other software required is the admixools2 R package (https://uqrmaie1.github.io/admixtools/articles/admixtools.html).
+The Snakemake pipelines were executed from a base conda environment using anaconda Command line client (version 1.7.2), Snakemake v.3.13.3, and Python 3.6.13 :: Anaconda, Inc. When running the pipeline for the first time, the Snakemake software will initialize a conda environment for the simulation pipeline. The file, *msprime-env.yaml*, located in each sub-directory, contains all the software necessary to execute the simulations and Snakemake will read from this file to set-up the conda env (note conda can be finicky when transferring across operating systems, the pipeline was setup on a Red Hat Enterprise Linux 7 env.). The only other software required is the ADMIXTOOLS2 R package (https://uqrmaie1.github.io/admixtools/articles/admixtools.html) (note this has to be located in the R library used by Snakemake).
 
 
 ## simple_models
