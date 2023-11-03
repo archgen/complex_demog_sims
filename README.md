@@ -34,11 +34,12 @@ You can override the configuration file through the command line argument `--con
 
 The eurasia_model root directory contains the executable Snakemake pipeline smk script *snakemake_msp_dtwf_ts_mu_eigaDNA__eurasia_qpAdm_f3.smk*. 
 
-To perform a test run on chromosome 22, for only a single target individual and one missingness dataset execute the following from the terminal:
+To perform a test run on chromosome 22, for only a single target individual and one missingness dataset, run the following:
 
 `snakemake -s snakemake_msp_dtwf_ts_mu_eigaDNA__eurasia_qpAdm_f3.smk --configfile config/config_msp_dtwf_eurasia.yml --use-conda --config genome_length="chr22" N_replicates=1 sample_sheet=input/testrun_sampleSheet_eurasia.txt empir_aDNA_prefix=v52.2_1240K_public_less100kSNPs simulation_model_name="Test_chr22" --latency-wait 7200`
 
 To perform the full eurasia simulation run: 
+
 `snakemake -s snakemake_msp_dtwf_ts_mu_eigaDNA__eurasia_qpAdm_f3.smk --configfile config/config_msp_dtwf_eurasia.yml --use-conda --latency-wait 7200`
 
 
