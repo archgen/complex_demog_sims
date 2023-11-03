@@ -5,18 +5,24 @@
 
 
 ## Input files
-demes_yaml: "input/demes_eurasia.yaml" # The demes 
-sample_sheet: "input/sampleSheet_eurasia.txt"
-empir_aDNA_dir: "input/"
-empir_aDNA_prefix: ["v52.2_1240K_public_SimsSubset_SWEurasia", "v52.2_1240K_public_100k500kSNPs", "v52.2_1240K_public_less100kSNPs"]
+demes_yaml: "input/demes_eurasia.yaml" # The demes yaml of the model you are simulating under. 
+sample_sheet: "input/sampleSheet_eurasia.txt"  # Note there is a test-run_sampleSheet_eurasia.txt sample sheet that has only a single target population so the analyses are only performed once.
+# Comma separated input sample sheet containing: 
+# Number of samples,Pop (population), Generations (generation sampled),qpAdmRotate (whether a target, rotating source or fixed right group or blank if not included),
+# Output (whether to output the sample in the eigenstrat file),qpAdmFixed(whether a target, replacement source or fixed right group or blank if not included).
+ 
+empir_aDNA_dir: "input/" # Input directory for the aDNA eigenstrat files for missigness. 
+empir_aDNA_prefix: ["v52.2_1240K_public_SimsSubset_SWEurasia", "v52.2_1240K_public_100k500kSNPs", "v52.2_1240K_public_less100kSNPs"] # The prefix for the missingness aDNA eigenstrat files.
+
 
 ## Input Parameters
-simulation_model_name: "eurasia_model__stdPopSim_WGS_aDNA"
-DTWF_generations: "25"
-genome_length: "WG"
-window_length_Fstats: "5000000"
-mutation_rate: "1.29e-08"
-N_replicates: "50"
+simulation_model_name: "eurasia_model__stdPopSim_WGS_aDNA" # The identification name for the simulation/ 
+DTWF_generations: "25" # Number of generations to simulate under the discrete time wright fisher model. 
+genome_length: "WG" # Whether to simulate a whole genome (WG) or just chromosome 22 (chr22)
+window_length_Fstats: "5000000" # The window size for jackknife f-statistics. 
+mutation_rate: "1.29e-08" # The fixed mutation rate. 
+N_replicates: "50" # The number of simulation replicates. 
+
 
 ## Scripts
 # R

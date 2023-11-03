@@ -3,19 +3,19 @@
 #: Config file for the Simple Demography simulation
 
 ## Input Parameters
-simulation_model_name: "Model4_DTWF"
-window_length_Fstats: "5000000"
-N_replicates: "1"
-DTWF_generations: "100"
-MRCA_split_generation: "200e3"
-N_diploid_samples: "20"
-diploid_Ne: "10e3"
-generation_time: "29"
+simulation_model_name: "Model4_DTWF" # Identification name for the simulation.  
+window_length_Fstats: "5000000" # The window length for jackknife of f-statistics. 
+N_replicates: "5000" # Number of simulation iterations to perform.
+DTWF_generations: "100" # Number of generations to simulate under the discrete time wright fisher model.
+MRCA_split_generation: "200e3" # The number of years for the deepest split in the tree (T0)
+N_diploid_samples: "20" # Number of diploid samples to take from each population. 
+diploid_Ne: "10e3" # The effective population size for each population. 
+generation_time: "29" # The generation time. 
 
 #: Chromosomes Configuration
 #: Source https://popsim-consortium.github.io/stdpopsim-docs/latest/catalog.html#sec_catalog_HomSap 
-recombination_rate: None
-chromosome_length: None
+recombination_rate: None # Specified as None if simulating Chrs 1-2 stdpopsim values as specified in the manuscript. 
+chromosome_length: None # Specified as None if simulating Chrs 1-2 stdpopsim values as specified in the manuscript.
 
 
 ## Scripts

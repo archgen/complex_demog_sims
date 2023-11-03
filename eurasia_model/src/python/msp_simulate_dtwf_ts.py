@@ -64,7 +64,7 @@ samples_list = []
 for i in sList: samples_list.append(msprime.SampleSet(num_samples=i[0], population=i[1], time=i[2]))
 print(tabulate(sample_sheet, headers=["Number of Samples", "Demes Population", "Generation Sampled", "qpAdm Rotation Analysis", "Output Format", "qpAdm Fixed Analysis"]))
 
-#' Defining the length of the simulated genome
+#' Defining the length of the simulated genome (WG == whole genome, chr22 = chromosome 22)
 if length == "WG":
     # Chromosome Lengths 
     chr1_L = 248956422
@@ -174,7 +174,7 @@ print(rate_map)
 
 
 
-print(f" Simulation of python msp simulation model {sim_model}. DTWF gennerations: {DTWFgens} replicate: {iteration} seed: {seed}. Genome size: {length}")
+print(f" Simulation of python msp simulation model {sim_model}. DTWF gennerations: {DTWFgens}, replicate: {iteration}, seed: {seed}, Genome size: {length}")
 # MSPRIME DTWF SIMULATION
 ts = msprime.sim_ancestry(
     samples=samples_list,

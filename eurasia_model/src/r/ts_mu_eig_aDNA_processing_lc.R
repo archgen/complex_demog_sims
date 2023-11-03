@@ -10,25 +10,6 @@
 library(data.table, lib.loc="./dev_RLibs")
 # Load the vroom package from the specified library location
 #library(vroom, lib.loc = "/storage/home/mkw5910/.conda/envs/snakemake_base/lib/R/library")
-.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
-library(vroom)
-library(tidyverse)
-library(optparse)
-library(tictoc)
-
-
-#' Process mutated tree-sequence with ancient DNA conditions
-#' 
-#' Matthew Williams: 
-#'  
-
-####################################
-# PACKAGES                         #
-####################################
-# Load the dev data.table package from the specified library location
-library(data.table, lib.loc="./dev_RLibs")
-# Load the vroom package from the specified library location
-#library(vroom, lib.loc = "/storage/home/mkw5910/.conda/envs/snakemake_base/lib/R/library")
 #.libPaths("/storage/home/mkw5910/.conda/envs/msprime-env/lib/R/library")
 library(vroom)
 library(tidyverse)
