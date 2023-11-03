@@ -5,7 +5,7 @@
 
 
 ## Input files
-demes_yaml: "input/demes_eurasia.yaml"
+demes_yaml: "input/demes_eurasia.yaml" # The demes 
 sample_sheet: "input/sampleSheet_eurasia.txt"
 empir_aDNA_dir: "input/"
 empir_aDNA_prefix: ["v52.2_1240K_public_SimsSubset_SWEurasia", "v52.2_1240K_public_100k500kSNPs", "v52.2_1240K_public_less100kSNPs"]
@@ -13,9 +13,11 @@ empir_aDNA_prefix: ["v52.2_1240K_public_SimsSubset_SWEurasia", "v52.2_1240K_publ
 ## Input Parameters
 simulation_model_name: "eurasia_model__stdPopSim_WGS_aDNA"
 DTWF_generations: "25"
+genome_length: "WG"
 window_length_Fstats: "5000000"
 mutation_rate: "1.29e-08"
 N_replicates: "50"
+
 ## Scripts
 # R
 ts_branch_FST_Summary_Output: "src/r/ts_branch_FST_SummaryTable.R"
@@ -40,7 +42,7 @@ ts_mu_eig_aDNA_FST: "src/r/ts_mu_eig_aDNA_FST.R"
 ts_mu_eig_aDNA_FST_Summary_Output: "src/r/ts_mu_eig_aDNA_FST_SummaryTable.R"
 ts_mu_eig_aDNA_qpAdmRotate_loop: "src/r/ts_mu_eig_aDNA_qpAdmRotate_loop.R"
 
-aDNA_conditions_functions_lc: "src/r/aDNA_conditions_functions_chrs21_22.R"
+aDNA_conditions_functions_lc: "src/r/aDNA_conditions_functions_lc.R"
 ts_mu_eig_aDNA_processing_lc: "src/r/ts_mu_eig_aDNA_processing_lc.R"
 
 # - Dubug code

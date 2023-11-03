@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-## TESTING
-#sample_sheet = pd.read_csv('/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/src_PSU_simulations_Projects/complex_demographic_model/input/Snakemake_sampleSheet_ts_aDNA_complexDemography.txt')
-#ts_mu = tskit.load('/Users/mkw5910/Library/CloudStorage/Box-Box/PSU/Complex_Admixture_Histories/snakemake/src_PSU_simulations_Projects/complex_demographic_model/out/complexDemography_model_A_HapMapII_GRCh37__Chrs21_22/ts_mu/ts_mu_complexDemography_model_A_HapMapII_GRCh37__Chrs21_22_rep_1.ts')
-
-#ts_mu = tskit.load('/Users/mkw5910/Documents/PSU_sims/snakemake/project__complex_msp_simulation/out/AncientEurasia_9K19/ts_mu/ts_mu_AncientEurasia_9K19_rep_1.ts')
-
 """
 Created on Mon Oct 24 13:38:39 2022
 
@@ -80,13 +74,13 @@ for variant in ts_mu.variants():
     write_eig_geno.append(Eig_geno)
     write_eig_snp.append(f'ss_{variant.index}\t{chrom}\t{variant.position/float(ts_mu.sequence_length)}\t{variant.position}\t2\t0')
  # Write output files    
-with open('ts_mu_%s_rep_{}.geno'.format(args['iteration']) %(args['simName']), mode='wt', encoding='utf-8') as geno:
+with open('ts_mu_eig_%s_rep_{}.geno'.format(args['iteration']) %(args['simName']), mode='wt', encoding='utf-8') as geno:
     geno.write('\n'.join(write_eig_geno)) # write .geno file not in the loop as large file
-with open('ts_mu_%s_rep_{}.snp'.format(args['iteration']) %(args['simName']), mode='wt', encoding='utf-8') as snp:
+with open('ts_mu_eig_%s_rep_{}.snp'.format(args['iteration']) %(args['simName']), mode='wt', encoding='utf-8') as snp:
     snp.write('\n'.join(write_eig_snp)) # write .snp file not in the loop as large file
 
 
-with open('ts_mu_%s_rep_{}.ind'.format(args['iteration']) %(args['simName']), 'w') as indFile:
+with open('ts_mu_eig_%s_rep_{}.ind'.format(args['iteration']) %(args['simName']), 'w') as indFile:
     for s, p in zip(samp_eig_inds, pop_eig):
         indFile.write("%s\tU\t%s \n" %(s,p))
     indFile.close()

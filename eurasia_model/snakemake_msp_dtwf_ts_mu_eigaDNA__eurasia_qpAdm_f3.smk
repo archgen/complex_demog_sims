@@ -274,7 +274,8 @@ rule ts_mu_eig_aDNA_processing:
         samples = config["sample_sheet"],
         aDNA_data_dir = config["empir_aDNA_dir"],
         empir_prefix = "{empir_aDNA_prefix}",
-        out_prefix = "out/{simName}/ts_mu_eig_aDNA_{empir_aDNA_prefix}/ts_mu_eig_aDNA_{empir_aDNA_prefix}_{simName}_rep_{iteration}" 
+        out_prefix = "out/{simName}/ts_mu_eig_aDNA_{empir_aDNA_prefix}/ts_mu_eig_aDNA_{empir_aDNA_prefix}_{simName}_rep_{iteration}",
+        length = config["genome_length"]
     output:
         "out/{simName}/ts_mu_eig_aDNA_{empir_aDNA_prefix}/ts_mu_eig_aDNA_{empir_aDNA_prefix}_{simName}_rep_{iteration}.geno",
         "out/{simName}/ts_mu_eig_aDNA_{empir_aDNA_prefix}/ts_mu_eig_aDNA_{empir_aDNA_prefix}_{simName}_rep_{iteration}.snp",
@@ -294,6 +295,7 @@ rule ts_mu_eig_aDNA_processing:
         --aDNA_data_dir {params.aDNA_data_dir} \
         --sample_sheet {params.samples} \
         --script_func {params.script_func} \
+        --length {params.length} \
         --out {params.out_prefix} "
 
 
@@ -331,7 +333,8 @@ rule msp_ts_mutate:
     params:
         script = config["msp_ts_mutate"],
         mu = config["mutation_rate"],
-        DTWF_time = config["DTWF_generations"]
+        DTWF_time = config["DTWF_generations"],
+        length = config["genome_length"]
     output:
         ts_mu = "out/{simName}/ts_mu/ts_mu_{simName}_rep_{iteration}.ts"
     wildcard_constraints:
@@ -346,6 +349,7 @@ rule msp_ts_mutate:
         --mutation_rate {params.mu} \
         --WFgens {params.DTWF_time} \
         --iteration {wildcards.iteration} \
+        --length {params.length} \
         --out {output.ts_mu} "
 
 
@@ -607,7 +611,8 @@ rule msp_ts_simulate:
         samples = config["sample_sheet"],
     params:
         simName = config["simulation_model_name"],
-        DTWF_time = config["DTWF_generations"]
+        DTWF_time = config["DTWF_generations"],
+        length = config["genome_length"]
     output:
         ts = "out/{simName}/ts/ts_{simName}_rep_{iteration}.ts" 
     wildcard_constraints:
@@ -623,6 +628,7 @@ rule msp_ts_simulate:
         --samples {input.samples} \
         --WFgens {params.DTWF_time} \
         --iteration {wildcards.iteration} \
+        --length {params.length} \
         --out {output.ts} "
 
 
